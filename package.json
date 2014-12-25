@@ -1,0 +1,13 @@
+{
+  "name": "purescript-assertion-error",
+  "devDependencies": {
+    "assertion-error": "^1.0.0",
+    "gulp": "^3.8.10",
+    "gulp-foreach": "^0.1.0",
+    "gulp-purescript": "^0.1.2",
+    "gulp-shell": "^0.2.11",
+    "run-sequence": "^1.0.2",
+    "webpack": "^1.4.14"
+  },
+  "license": "MIT"
+}
