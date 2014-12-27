@@ -1,6 +1,6 @@
 {
   "name": "purescript-assertion-error",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "homepage": "https://github.com/philopon/purescript-assertion-error",
   "description": "assertion-error wrapper for purescript",
   "keywords": [
@@ -17,6 +17,7 @@
     "bower.json",
     "Gruntfile.js",
     "package.json",
+    "examples/main.js",
     "wrapper",
     "gulpfile.js"
   ],
