@@ -2,10 +2,10 @@
 
 cd `dirname $0`
 
-../node_modules/webpack/bin/webpack.js assertion-error bundle.js 1>&2
+../node_modules/webpack/bin/webpack.js --output-library assert assertion-error bundle.js 1>&2
 
 cat <<EOC
-module $1 (assert) where
+module Test.Assert.AssertionError.Foreign (assert) where
 
 foreign import assert """
 EOC

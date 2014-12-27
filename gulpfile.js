@@ -11,7 +11,7 @@ var sources = [bowerPurs, 'src/**/*.purs'];
 
 
 gulp.task('wrapper', shell.task([
-  './wrapper/generate.sh Test.Assert.AssertionError.Foreign > src/Test/Assert/AssertionError/Foreign.purs'
+  './wrapper/generate.sh > src/Test/Assert/AssertionError/Foreign.purs'
 ]));
 
 gulp.task('pscMake', function(){
