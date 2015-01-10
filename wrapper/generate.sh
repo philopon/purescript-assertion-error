@@ -1,17 +1,18 @@
 #!/bin/bash
 
-cd `dirname $0`
+OUT=src/Test/Assert/AssertionError/Foreign.purs
 
-../node_modules/webpack/bin/webpack.js --output-library assert assertion-error bundle.js 1>&2
-
-cat <<EOC
+cat <<EOC > $OUT
 module Test.Assert.AssertionError.Foreign (assert) where
 
 foreign import assert """
+var assert = (function(module, exports){
 EOC
 
-cat bundle.js | tr -d '\r'
+cat node_modules/assertion-error/index.js >> $OUT
 
-cat <<EOC
-""" :: forall a. a
+cat <<EOC >> $OUT
+
+return module.exports;
+}({}, {}));""" :: forall a. a
 EOC
