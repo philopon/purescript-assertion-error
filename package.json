@@ -6,8 +6,7 @@
     "gulp-foreach": "^0.1.0",
     "gulp-purescript": "^0.1.2",
     "gulp-shell": "^0.2.11",
-    "run-sequence": "^1.0.2",
-    "webpack": "^1.4.15"
+    "run-sequence": "^1.0.2"
   },
   "license": "MIT"
 }
