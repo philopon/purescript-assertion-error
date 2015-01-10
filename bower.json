@@ -1,6 +1,6 @@
 {
   "name": "purescript-assertion-error",
-  "version": "0.1.2",
+  "version": "0.1.3",
   "homepage": "https://github.com/philopon/purescript-assertion-error",
   "description": "assertion-error wrapper for purescript",
   "keywords": [
