@@ -23,8 +23,8 @@ function assertionErrorImpl(c, msg, props, ssf){
             } String {|props} (Maybe ssf) AssertionError
 
 assertionError :: forall props ssf. String -> {|props} -> Maybe ssf -> AssertionError
-assertionError = runFn4 assertionErrorImpl
-  {fromMaybe: fromMaybe, assertionError: assert}
+assertionError n p s = runFn4 assertionErrorImpl
+  {fromMaybe: fromMaybe, assertionError: assert} n p s
 
 foreign import showAssertionErrorImpl """
 function showAssertionErrorImpl(a){
@@ -46,7 +46,7 @@ function toJSONImpl(maybe, with_stack, assetionError){
 """ :: Fn3 {just :: String -> Maybe String, nothing :: Maybe String} Boolean AssertionError AssertionErrorJSON
 
 toJSON :: Boolean -> AssertionError -> AssertionErrorJSON
-toJSON = runFn3 toJSONImpl {just: Just, nothing: Nothing}
+toJSON b e = runFn3 toJSONImpl {just: Just, nothing: Nothing} b e
 
 foreign import toJSONStringImpl """
 function toJSONStringImpl(with_stack, assetionError){
@@ -54,7 +54,7 @@ function toJSONStringImpl(with_stack, assetionError){
 }""" :: Fn2 Boolean AssertionError String
 
 toJSONString :: Boolean -> AssertionError -> String
-toJSONString = runFn2 toJSONStringImpl
+toJSONString b e = runFn2 toJSONStringImpl b e
 
 foreign import toError """
 function toError(ae){return ae;}
