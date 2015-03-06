@@ -2,10 +2,12 @@
 
 ## Module Test.Assert.AssertionError.Foreign
 
-### Values
+#### `assert`
 
+``` purescript
+assert :: forall a. a
+```
 
-    assert :: forall a. a
 
 
 

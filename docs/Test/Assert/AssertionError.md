@@ -2,34 +2,54 @@
 
 ## Module Test.Assert.AssertionError
 
-### Types
+#### `AssertionError`
+
+``` purescript
+data AssertionError :: *
+```
 
 
-    data AssertionError :: *
+#### `assertionError`
+
+``` purescript
+assertionError :: forall props ssf. String -> {  | props } -> Maybe ssf -> AssertionError
+```
 
 
-    type AssertionErrorJSON = { stack :: Maybe String, showDiff :: Boolean, message :: String, name :: String }
+#### `showAssertionError`
+
+``` purescript
+instance showAssertionError :: Show AssertionError
+```
 
 
-### Type Class Instances
+#### `AssertionErrorJSON`
+
+``` purescript
+type AssertionErrorJSON = { stack :: Maybe String, showDiff :: Boolean, message :: String, name :: String }
+```
 
 
-    instance showAssertionError :: Show AssertionError
+#### `toJSON`
+
+``` purescript
+toJSON :: Boolean -> AssertionError -> AssertionErrorJSON
+```
 
 
-### Values
+#### `toJSONString`
+
+``` purescript
+toJSONString :: Boolean -> AssertionError -> String
+```
 
 
-    assertionError :: forall props ssf. String -> {  | props } -> Maybe ssf -> AssertionError
+#### `toError`
 
+``` purescript
+toError :: AssertionError -> Error
+```
 
-    toError :: AssertionError -> Error
-
-
-    toJSON :: Boolean -> AssertionError -> AssertionErrorJSON
-
-
-    toJSONString :: Boolean -> AssertionError -> String
 
 
 
